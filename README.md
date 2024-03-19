@@ -57,3 +57,31 @@ classDiagram
   Subject "1" *-- "*" Observer : notifies >
   Observer <|-- ConcreteObserver
 ```
+```mermaid
+classDiagram
+class Proxy {
+  +Service()
+}
+
+class Servant {
+  +Service()
+}
+
+class MethodRequest {
+  +Call()
+}
+
+class Scheduler {
+  +Schedule()
+}
+
+class ActivationList {
+  +AddMethodRequest()
+  +RemoveMethodRequest()
+}
+
+Proxy --> Scheduler : uses
+Servant --> MethodRequest : implements
+Scheduler --> ActivationList : uses
+ActivationList o-- MethodRequest : contains
+```
