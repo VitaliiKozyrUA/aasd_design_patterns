@@ -23,3 +23,21 @@ classDiagram
           +operation2()
       }
 ```
+```mermaid
+classDiagram
+      Flyweight <|.. ConcreteFlyweight
+      FlyweightFactory ..> Flyweight
+      class Flyweight{
+          <<interface>>
+          -IntrinsicState
+          +Operation(extrinsicState)
+      }
+      class ConcreteFlyweight{
+          -AllState
+          +Operation(extrinsicState)
+      }
+      class FlyweightFactory{
+          -flyweights
+          +GetFlyweight(key)
+      }
+```
