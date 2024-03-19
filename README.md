@@ -1,6 +1,6 @@
 # aasd_design_patterns
 
-```
+```mermaid
 classDiagram
       Creator <|-- ConcreteCreator
       Product <|.. ConcreteProduct
