@@ -87,11 +87,12 @@ sequenceDiagram
     participant Subject
     participant Observer
     participant ConcreteObserver
-    
-    Subject->>Observer: RegisterObserver(ConcreteObserver)
-    Subject->>ConcreteObserver: Update()
-    Observer-->>Subject: NotifyObservers()
 
+    Subject->>Observer: RegisterObserver()
+    Observer->>ConcreteObserver: Update()
+    ConcreteObserver->>Observer: Update()
+    Subject->>Observer: NotifyObservers()
+    Observer-->>Subject: RemoveObserver()
 ```
 ```mermaid
 classDiagram
