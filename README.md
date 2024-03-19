@@ -41,3 +41,19 @@ classDiagram
           +GetFlyweight(key)
       }
 ```
+```mermaid
+classDiagram
+  class Subject {
+    +RegisterObserver(Observer)
+    +RemoveObserver(Observer)
+    +NotifyObservers()
+  }
+  class Observer {
+    +Update()
+  }
+  class ConcreteObserver {
+    +Update()
+  }
+  Subject "1" *-- "*" Observer : notifies >
+  Observer <|-- ConcreteObserver
+```
