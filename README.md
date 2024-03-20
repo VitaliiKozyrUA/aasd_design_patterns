@@ -6,6 +6,7 @@
 
 **Опис:** У паттерні Factory Method для створення об'єкта визначається інтерфейс, але вибір, який саме клас інстанціювати, залишається за підкласами. Це забезпечує більшу гнучкість і розділення коду.
 
+**UML діаграма класів Factory Method**
 ```mermaid
 classDiagram
       Creator <|-- ConcreteCreator
@@ -29,8 +30,8 @@ classDiagram
           +operation2()
       }
 ```
-**UML діаграма класів Factory Method**
 
+**UML діаграма взаємодії Factory Method**
 ```mermaid
 sequenceDiagram
     participant Client
@@ -45,7 +46,6 @@ sequenceDiagram
     ConcreteProduct-->>Creator: Product
     Creator-->>Client: Product
 ```
-**UML діаграма взаємодії Factory Method**
 
 **Основні структурні елементи:** 
 - **Product:** Інтерфейс для створюваних об'єктів.
@@ -63,6 +63,7 @@ sequenceDiagram
 
 **Опис:** Об'єкти Flyweight є незмінними, вони не можуть бути змінені після створення. Шаблон використовує фабрику для управління об'єктами і повторно використовує існуючі екземпляри, передаючи зовнішні дані, коли це необхідно.
 
+**UML діаграма класів Flyweight**
 ```mermaid
 classDiagram
       Flyweight <|.. ConcreteFlyweight
@@ -81,8 +82,8 @@ classDiagram
           +GetFlyweight(key)
       }
 ```
-**UML діаграма класів Flyweight**
 
+**UML діаграма взаємодії Flyweight**
 ```mermaid
 sequenceDiagram
     participant Client
@@ -94,7 +95,6 @@ sequenceDiagram
     FlyweightFactory->>Flyweight: Operation(extrinsicState)
     Flyweight-->>Client: Operation(extrinsicState)
 ```
-**UML діаграма взаємодії Flyweight**
 
 **Основні структурні елементи:** 
 - **Flyweight:** Інтерфейс, за допомогою якого Flyweight може отримувати зовнішній стан та здійснювати операції над ним.
@@ -111,6 +111,7 @@ sequenceDiagram
 
 **Опис:** Патерн Observer включає в себе об'єкт і декількох спостерігачів. Спостерігачі підписуються на об’єкт і отримують повідомлення про зміни стану, що спонукає їх оновлюватись відповідно.
 
+**UML діаграма класів Observer**
 ```mermaid
 classDiagram
   class Subject {
@@ -127,8 +128,8 @@ classDiagram
   Subject "1" *-- "*" Observer : notifies >
   Observer <|-- ConcreteObserver
 ```
-**UML діаграма класів Observer**
 
+**UML діаграма взаємодії Observer**
 ```mermaid
 sequenceDiagram
     participant Subject
@@ -141,7 +142,6 @@ sequenceDiagram
     Subject->>Observer: NotifyObservers()
     Observer-->>Subject: RemoveObserver()
 ```
-**UML діаграма взаємодії Observer**
 
 **Основні структурні елементи:** 
 - **Subject:** Веде список спостерігачів та повідомляє їх про зміни.
@@ -158,6 +158,7 @@ sequenceDiagram
 
 **Опис:** Активні об'єкти містять механізм виклику методів, планувальник для обробки запитів та окремий потік для виконання методів.
 
+**UML діаграма класів Active Object**
 ```mermaid
 classDiagram
 class Proxy {
@@ -186,8 +187,8 @@ Servant --> MethodRequest : implements
 Scheduler --> ActivationList : uses
 ActivationList o-- MethodRequest : contains
 ```
-**UML діаграма класів Active Object**
 
+**UML діаграма взаємодії Active Object**
 ```mermaid
 sequenceDiagram
     participant Client
@@ -208,7 +209,6 @@ sequenceDiagram
     Scheduler-->>Proxy: Done
     Proxy-->>Client: Result
 ```
-**UML діаграма взаємодії Active Object**
 
 **Основні структурні елементи:** 
 - **Proxy:** Надає клієнтам інтерфейс для надсилання запитів.
